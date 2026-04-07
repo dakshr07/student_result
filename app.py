@@ -1,6 +1,34 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
+
+# Student data
+students = {
+    "4MH24CI022": {
+        "password": "MIT123",
+        "name": "Likitha",
+        "branch": "CSE (AI & ML)",
+        "sgpa": "7.15"
+    },
+    "4MH24EC039": {
+        "password": "MIT123",
+        "name": "Harshitha C S",
+        "branch": "ECE",
+        "sgpa": "7.32"
+    },
+    "4MH24CS075": {
+        "password": "MIT123",
+        "name": "Kushi K L",
+        "branch": "CSE",
+        "sgpa": "7.09"
+    },
+    "4MH24CA056": {
+        "password": "MIT123",
+        "name": "Tejaswini B K",
+        "branch": "CSE (AI)",
+        "sgpa": "7.65"
+    }
+}
 
 @app.route('/')
 def home():
@@ -21,19 +49,9 @@ def result():
     usn = request.form['usn']
     password = request.form['password']
 
-    if usn == "4MH24CI022" and password == "MIT123":
-        return "Likitha SGPA 7.15"
-
-    elif usn == "4MH24EC039" and password == "MIT123":
-        return "Harshitha SGPA 7.32"
-
-    elif usn == "4MH24CS075" and password == "MIT123":
-        return "Kushi SGPA 7.09"
-
-    elif usn == "4MH24CA056" and password == "MIT123":
-        return "Tejaswini SGPA 7.65"
-
+    if usn in students and students[usn]["password"] == password:
+        return render_template("result.html", student=students[usn], usn=usn)
     else:
-        return "Invalid"
+        return "Invalid USN or Password"
 
 app.run(host='0.0.0.0', port=10000)
