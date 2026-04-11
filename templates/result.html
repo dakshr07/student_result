@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body { font-family: Arial; margin:20px; }
-.header { text-align:center; }
-.logo { float:left; width:80px; }
-table { width:100%; border-collapse: collapse; margin-top:20px; }
-th, td { border:1px solid black; padding:6px; text-align:center; }
-.sgpa-box {
-    float:right;
-    border:2px solid black;
-    padding:10px;
-    font-weight:bold;
-}
-</style>
+    <title>Student Result</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .sgpa-box {
+            float: right;
+            border: 2px solid black;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Maharaja_Institute_of_Technology_Mysore_Logo.png/220px-Maharaja_Institute_of_Technology_Mysore_Logo.png" class="logo">
-
 <div class="header">
-<h2>Maharaja Institute Of Technology Mysore</h2>
-<p>An Autonomous Institution Affiliated to VTU</p>
-<h3>Provisional Grade Card</h3>
-<p>Odd semester 2025-26 Dec/Jan Examination</p>
+    <h2>Maharaja Institute Of Technology Mysore</h2>
+    <p>An Autonomous Institution Affiliated to VTU</p>
+    <h3>Provisional Grade Card</h3>
+    <p>Odd semester 2025-26 Dec/Jan Examination</p>
 </div>
 
 <p><b>USN:</b> {{ usn }}</p>
@@ -33,33 +48,32 @@ th, td { border:1px solid black; padding:6px; text-align:center; }
 <p><b>Branch:</b> {{ student.branch }}</p>
 <p><b>Semester:</b> 3</p>
 
-<table>
-<tr>
-<th>S.No</th>
-<th>Course Name</th>
-<th>CIE</th>
-<th>SEE</th>
-<th>Total</th>
-<th>Grade</th>
-</tr>
+<div class="sgpa-box">
+    SGPA: {{ student.sgpa }}
+</div>
 
-{% for sub in student.subjects %}
-<tr>
-<td>{{ loop.index }}</td>
-<td>{{ sub[0] }}</td>
-<td>{{ sub[1] }}</td>
-<td>{{ sub[2] }}</td>
-<td>{{ sub[3] }}</td>
-<td>{{ sub[4] }}</td>
-</tr>
-{% endfor %}
+<table>
+    <tr>
+        <th>S.No</th>
+        <th>Course Name</th>
+        <th>CIE</th>
+        <th>SEE</th>
+        <th>Total</th>
+        <th>Grade</th>
+    </tr>
+
+    {% for subject in student.subjects %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ subject.name }}</td>
+        <td>{{ subject.cie }}</td>
+        <td>{{ subject.see }}</td>
+        <td>{{ subject.total }}</td>
+        <td>{{ subject.grade }}</td>
+    </tr>
+    {% endfor %}
 
 </table>
-
-<div class="sgpa-box">
-Total Credits: {{ student.credits }} <br>
-SGPA: {{ student.sgpa }}
-</div>
 
 </body>
 </html>
