@@ -36,13 +36,7 @@ def home():
 
 @app.route('/login')
 def login():
-    return '''
-    <form action="/result" method="post">
-    USN: <input name="usn"><br><br>
-    Password: <input type="password" name="password"><br><br>
-    <button>Result</button>
-    </form>
-    '''
+    return render_templates("login.html")
 
 @app.route('/result', methods=['POST'])
 def result():
