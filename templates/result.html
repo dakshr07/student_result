@@ -1,104 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Grade Card</title>
-
-    <style>
-        body {
-            font-family: Arial;
-            margin: 20px;
-        }
-
-        .top {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            width: 90px;
-        }
-
-        .header {
-            text-align: center;
-            width: 100%;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 6px;
-            text-align: center;
-        }
-
-        .details {
-            margin-top: 20px;
-        }
-
-        .sgpa-box {
-            float: right;
-            border: 2px solid black;
-            padding: 10px;
-            font-weight: bold;
-        }
-    </style>
+<style>
+body { font-family: Arial; margin: 20px; }
+.header { text-align: center; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { border:1px solid black; padding:6px; text-align:center; }
+</style>
 </head>
 
 <body>
 
-<div class="top">
-    <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+<div class="header">
+    <h2>Maharaja Institute Of Technology Mysore</h2>
+    <p>An Autonomous Institution Affiliated to VTU</p>
+    <h3>Provisional Grade Card</h3>
+    <p>Odd semester 2025-26 Dec/Jan Examination</p>
+</div>
 
-    <div class="header">
-        <h2>Maharaja Institute Of Technology Mysore</h2>
-        <p>An Autonomous Institution Affiliated to VTU</p>
-        <h3>Provisional Grade Card</h3>
-        <p>Odd semester 2025-26 Dec/Jan Examination</p>
+<!-- LEFT + RIGHT INFO -->
+<div style="display:flex; justify-content:space-between; margin-top:20px;">
+    <div>
+        <p><b>USN:</b> {{ usn }}</p>
+        <p><b>Name:</b> {{ student.name }}</p>
+        <p><b>Branch:</b> {{ student.branch }}</p>
+    </div>
+
+    <div style="text-align:right;">
+        <p><b>Semester:</b> 3</p>
+        <p><b>Father's Name:</b> {{ student.father }}</p>
     </div>
 </div>
 
-<div class="details">
-    <p><b>USN:</b> {{ usn }}</p>
-    <p><b>Name:</b> {{ student.name }}</p>
-    <p><b>Branch:</b> {{ student.branch }}</p>
-    <p><b>Semester:</b> 3</p>
-</div>
-
-<div class="sgpa-box">
-    SGPA: {{ student.sgpa }}
-</div>
-
+<!-- TABLE -->
 <table>
-    <tr>
-        <th>S.No</th>
-        <th>Course Code</th>
-        <th>Course Name</th>
-        <th>CIE</th>
-        <th>SEE</th>
-        <th>Total</th>
-        <th>Grade Point</th>
-        <th>Grade</th>
-        <th>Credits</th>
-    </tr>
+<tr>
+<th>S.No</th>
+<th>Course Code</th>
+<th>Course Name</th>
+<th>CIE</th>
+<th>SEE</th>
+<th>Total</th>
+<th>Grade Point</th>
+<th>Grade</th>
+<th>Credits</th>
+</tr>
 
-    {% for subject in student.subjects %}
-    <tr>
-        <td>{{ loop.index }}</td>
-        <td>{{ subject.code }}</td>
-        <td>{{ subject.name }}</td>
-        <td>{{ subject.cie }}</td>
-        <td>{{ subject.see }}</td>
-        <td>{{ subject.total }}</td>
-        <td>{{ subject.gp }}</td>
-        <td>{{ subject.grade }}</td>
-        <td>{{ subject.credits }}</td>
-    </tr>
-    {% endfor %}
+{% for sub in student.subjects %}
+<tr>
+<td>{{ loop.index }}</td>
+<td>{{ sub.code }}</td>
+<td>{{ sub.name }}</td>
+<td>{{ sub.cie }}</td>
+<td>{{ sub.see }}</td>
+<td>{{ sub.total }}</td>
+<td>{{ sub.gp }}</td>
+<td>{{ sub.grade }}</td>
+<td>{{ sub.credits }}</td>
+</tr>
+{% endfor %}
 </table>
+
+<!-- SGPA -->
+<br><br>
+<table style="width:300px; float:right;">
+<tr>
+<td><b>Total Credits</b></td>
+<td>{{ student.subjects | sum(attribute='credits') }}</td>
+</tr>
+<tr>
+<td><b>SGPA</b></td>
+<td>{{ student.sgpa }}</td>
+</tr>
+</table>
+
+<br><br><br>
+
+<!-- FOOTER -->
+<div style="display:flex; justify-content:space-between;">
+<div><b>Date:</b> Apr 07, 2026</div>
+<div><b>Controller of Examinations</b></div>
+</div>
+
+<br><br>
+
+<p style="font-size:12px;">
+Note: The results published are provisional and for immediate information only.
+</p>
 
 </body>
 </html>
