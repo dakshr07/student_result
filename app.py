@@ -36,7 +36,7 @@ def home():
 
 @app.route('/login')
 def login():
-    return render_templates("login.html")
+    return render_template("login.html")
 
 @app.route('/result', methods=['POST'])
 def result():
