@@ -2,47 +2,90 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 body {
+    margin: 0;
     font-family: Arial;
-    background: linear-gradient(to right, #ff416c, #ff4b2b);
-    color: white;
-    text-align: center;
-    padding-top: 50px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
 }
-.box {
+
+/* HEADER */
+.header {
     background: white;
-    color: black;
-    padding: 20px;
-    margin: auto;
-    width: 300px;
-    border-radius: 10px;
-}
-input {
-    width: 90%;
     padding: 10px;
-    margin: 10px;
+    display: flex;
+    align-items: center;
 }
+
+.header img {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.header h3 {
+    margin: 0;
+}
+
+/* LOGIN BOX */
+.container {
+    max-width: 350px;
+    margin: 60px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* BUTTON */
 button {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 12px;
     background: red;
     color: white;
     border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background: darkred;
 }
 </style>
+
 </head>
 
 <body>
 
-<h2>Maharaja Institute Of Technology Mysore</h2>
-<h3>Student Login</h3>
+<!-- HEADER -->
+<div class="header">
+    <img src="{{ url_for('static', filename='logo.png') }}">
+    <h3>MIT Mysore</h3>
+</div>
 
-<div class="box">
-<form action="/result" method="post">
-<input name="usn" placeholder="Enter USN"><br>
-<input type="password" name="password" placeholder="Enter Password"><br>
-<button>Result</button>
-</form>
+<!-- LOGIN FORM -->
+<div class="container">
+    <h2>Student Login</h2>
+
+    <form action="/result" method="post">
+        <input type="text" name="usn" placeholder="Enter USN" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+
+        <button type="submit">Get Result</button>
+    </form>
 </div>
 
 </body>
