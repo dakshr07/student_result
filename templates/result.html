@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Result</title>
+    <title>Grade Card</title>
 
     <style>
         body {
@@ -9,8 +9,18 @@
             margin: 20px;
         }
 
+        .top {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 90px;
+        }
+
         .header {
             text-align: center;
+            width: 100%;
         }
 
         table {
@@ -21,8 +31,12 @@
 
         th, td {
             border: 1px solid black;
-            padding: 8px;
+            padding: 6px;
             text-align: center;
+        }
+
+        .details {
+            margin-top: 20px;
         }
 
         .sgpa-box {
@@ -36,17 +50,23 @@
 
 <body>
 
-<div class="header">
-    <h2>Maharaja Institute Of Technology Mysore</h2>
-    <p>An Autonomous Institution Affiliated to VTU</p>
-    <h3>Provisional Grade Card</h3>
-    <p>Odd semester 2025-26 Dec/Jan Examination</p>
+<div class="top">
+    <img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+
+    <div class="header">
+        <h2>Maharaja Institute Of Technology Mysore</h2>
+        <p>An Autonomous Institution Affiliated to VTU</p>
+        <h3>Provisional Grade Card</h3>
+        <p>Odd semester 2025-26 Dec/Jan Examination</p>
+    </div>
 </div>
 
-<p><b>USN:</b> {{ usn }}</p>
-<p><b>Name:</b> {{ student.name }}</p>
-<p><b>Branch:</b> {{ student.branch }}</p>
-<p><b>Semester:</b> 3</p>
+<div class="details">
+    <p><b>USN:</b> {{ usn }}</p>
+    <p><b>Name:</b> {{ student.name }}</p>
+    <p><b>Branch:</b> {{ student.branch }}</p>
+    <p><b>Semester:</b> 3</p>
+</div>
 
 <div class="sgpa-box">
     SGPA: {{ student.sgpa }}
@@ -55,24 +75,29 @@
 <table>
     <tr>
         <th>S.No</th>
+        <th>Course Code</th>
         <th>Course Name</th>
         <th>CIE</th>
         <th>SEE</th>
         <th>Total</th>
+        <th>Grade Point</th>
         <th>Grade</th>
+        <th>Credits</th>
     </tr>
 
     {% for subject in student.subjects %}
     <tr>
         <td>{{ loop.index }}</td>
+        <td>{{ subject.code }}</td>
         <td>{{ subject.name }}</td>
         <td>{{ subject.cie }}</td>
         <td>{{ subject.see }}</td>
         <td>{{ subject.total }}</td>
+        <td>{{ subject.gp }}</td>
         <td>{{ subject.grade }}</td>
+        <td>{{ subject.credits }}</td>
     </tr>
     {% endfor %}
-
 </table>
 
 </body>
