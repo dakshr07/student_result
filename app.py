@@ -11,14 +11,14 @@ students = {
         "branch": "CSE (AI & ML)",
         "sgpa": "7.15",
         "subjects": [
-            {"name": "Biology for Engineers", "cie": 47, "see": 41, "total": 88, "grade": "A+"},
-            {"name": "LDCO", "cie": 41, "see": 26, "total": 67, "grade": "B+"},
-            {"name": "Operating System", "cie": 38, "see": 29, "total": 67, "grade": "B+"},
-            {"name": "Data Structures", "cie": 36, "see": 18, "total": 54, "grade": "C"},
-            {"name": "Software Engineering", "cie": 42, "see": 30, "total": 72, "grade": "A"},
-            {"name": "OOPS with Java", "cie": 41, "see": 18, "total": 59, "grade": "B"},
-            {"name": "Data Visualization", "cie": 50, "see": 38, "total": 88, "grade": "A+"},
-            {"name": "DS Lab", "cie": 42, "see": 45, "total": 87, "grade": "A+"}
+            {"code": "M23BBIOK301", "name": "Biology for Engineers", "cie": 47, "see": 41, "total": 88, "gp": 9, "grade": "A+", "credits": 1},
+            {"code": "M23BCS302", "name": "LDCO", "cie": 41, "see": 26, "total": 67, "gp": 7, "grade": "B+", "credits": 3},
+            {"code": "M23BCS303", "name": "Operating System", "cie": 38, "see": 29, "total": 67, "gp": 7, "grade": "B+", "credits": 4},
+            {"code": "M23BCS304", "name": "Data Structures", "cie": 36, "see": 18, "total": 54, "gp": 5, "grade": "C", "credits": 3},
+            {"code": "M23BCS305", "name": "Software Engineering", "cie": 42, "see": 30, "total": 72, "gp": 8, "grade": "A", "credits": 3},
+            {"code": "M23BCS306", "name": "OOPS with Java", "cie": 41, "see": 18, "total": 59, "gp": 6, "grade": "B", "credits": 3},
+            {"code": "M23BCS309", "name": "Data Visualization", "cie": 50, "see": 38, "total": 88, "gp": 9, "grade": "A+", "credits": 1},
+            {"code": "M23BCSL307", "name": "DS Lab", "cie": 42, "see": 45, "total": 87, "gp": 9, "grade": "A+", "credits": 1}
         ]
     },
 
@@ -28,12 +28,11 @@ students = {
         "branch": "ECE",
         "sgpa": "7.32",
         "subjects": [
-            {"name": "Maths", "cie": 45, "see": 40, "total": 85, "grade": "A+"},
-            {"name": "Electronics", "cie": 40, "see": 30, "total": 70, "grade": "A"},
-            {"name": "Signals", "cie": 38, "see": 28, "total": 66, "grade": "B+"},
-            {"name": "Networks", "cie": 35, "see": 25, "total": 60, "grade": "B"},
-            {"name": "Microprocessor", "cie": 42, "see": 32, "total": 74, "grade": "A"},
-            {"name": "Lab 1", "cie": 44, "see": 46, "total": 90, "grade": "A+"}
+            {"code": "EC301", "name": "Signals & Systems", "cie": 45, "see": 40, "total": 85, "gp": 9, "grade": "A+", "credits": 3},
+            {"code": "EC302", "name": "Digital Electronics", "cie": 40, "see": 30, "total": 70, "gp": 8, "grade": "A", "credits": 3},
+            {"code": "EC303", "name": "Network Theory", "cie": 38, "see": 28, "total": 66, "gp": 7, "grade": "B+", "credits": 4},
+            {"code": "EC304", "name": "Control Systems", "cie": 35, "see": 25, "total": 60, "gp": 6, "grade": "B", "credits": 3},
+            {"code": "EC305", "name": "Microcontrollers", "cie": 42, "see": 32, "total": 74, "gp": 8, "grade": "A", "credits": 3}
         ]
     },
 
@@ -43,12 +42,11 @@ students = {
         "branch": "CSE",
         "sgpa": "7.09",
         "subjects": [
-            {"name": "Maths", "cie": 40, "see": 35, "total": 75, "grade": "A"},
-            {"name": "C Programming", "cie": 38, "see": 30, "total": 68, "grade": "B+"},
-            {"name": "Python", "cie": 42, "see": 36, "total": 78, "grade": "A"},
-            {"name": "DS", "cie": 35, "see": 25, "total": 60, "grade": "B"},
-            {"name": "DBMS", "cie": 39, "see": 29, "total": 68, "grade": "B+"},
-            {"name": "Lab", "cie": 45, "see": 47, "total": 92, "grade": "A+"}
+            {"code": "CS301", "name": "Data Structures", "cie": 40, "see": 35, "total": 75, "gp": 8, "grade": "A", "credits": 4},
+            {"code": "CS302", "name": "Operating System", "cie": 38, "see": 28, "total": 66, "gp": 7, "grade": "B+", "credits": 4},
+            {"code": "CS303", "name": "DBMS", "cie": 42, "see": 30, "total": 72, "gp": 8, "grade": "A", "credits": 3},
+            {"code": "CS304", "name": "Computer Networks", "cie": 36, "see": 24, "total": 60, "gp": 6, "grade": "B", "credits": 3},
+            {"code": "CS305", "name": "Software Engineering", "cie": 41, "see": 29, "total": 70, "gp": 8, "grade": "A", "credits": 3}
         ]
     },
 
@@ -58,12 +56,11 @@ students = {
         "branch": "CSE (AI)",
         "sgpa": "7.65",
         "subjects": [
-            {"name": "AI", "cie": 48, "see": 40, "total": 88, "grade": "A+"},
-            {"name": "ML", "cie": 45, "see": 35, "total": 80, "grade": "A+"},
-            {"name": "Python", "cie": 42, "see": 30, "total": 72, "grade": "A"},
-            {"name": "Data Science", "cie": 40, "see": 28, "total": 68, "grade": "B+"},
-            {"name": "Statistics", "cie": 38, "see": 26, "total": 64, "grade": "B+"},
-            {"name": "Lab", "cie": 46, "see": 48, "total": 94, "grade": "A+"}
+            {"code": "AI301", "name": "Machine Learning", "cie": 45, "see": 35, "total": 80, "gp": 9, "grade": "A+", "credits": 4},
+            {"code": "AI302", "name": "Data Science", "cie": 42, "see": 30, "total": 72, "gp": 8, "grade": "A", "credits": 3},
+            {"code": "AI303", "name": "Python Programming", "cie": 48, "see": 40, "total": 88, "gp": 10, "grade": "O", "credits": 3},
+            {"code": "AI304", "name": "Deep Learning", "cie": 39, "see": 28, "total": 67, "gp": 7, "grade": "B+", "credits": 3},
+            {"code": "AI305", "name": "AI Lab", "cie": 50, "see": 45, "total": 95, "gp": 10, "grade": "O", "credits": 2}
         ]
     }
 
