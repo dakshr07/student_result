@@ -1,16 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
-body { font-family: Arial; margin: 20px; }
-.header { text-align: center; }
-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-th, td { border:1px solid black; padding:6px; text-align:center; }
+body {
+    font-family: Arial;
+    margin: 20px;
+}
+
+.header {
+    text-align: center;
+}
+
+.logo {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 80px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.note {
+    font-size: 12px;
+    margin-top: 20px;
+}
 </style>
 </head>
 
 <body>
 
+<!-- LOGO -->
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Maharaja_Institute_of_Technology_Mysore_logo.png/220px-Maharaja_Institute_of_Technology_Mysore_logo.png" class="logo">
+
+<!-- HEADER -->
 <div class="header">
     <h2>Maharaja Institute Of Technology Mysore</h2>
     <p>An Autonomous Institution Affiliated to VTU</p>
@@ -18,74 +68,78 @@ th, td { border:1px solid black; padding:6px; text-align:center; }
     <p>Odd semester 2025-26 Dec/Jan Examination</p>
 </div>
 
-<!-- LEFT + RIGHT INFO -->
-<div style="display:flex; justify-content:space-between; margin-top:20px;">
+<!-- DETAILS -->
+<div class="details">
     <div>
         <p><b>USN:</b> {{ usn }}</p>
         <p><b>Name:</b> {{ student.name }}</p>
         <p><b>Branch:</b> {{ student.branch }}</p>
     </div>
 
-    <div style="text-align:right;">
+    <div>
         <p><b>Semester:</b> 3</p>
-        <p><b>Father's Name:</b> {{ student.father }}</p>
+        <p><b>Father's / Mother's Name:</b> {{ student.father }}</p>
     </div>
 </div>
 
 <!-- TABLE -->
 <table>
 <tr>
-<th>S.No</th>
-<th>Course Code</th>
-<th>Course Name</th>
-<th>CIE</th>
-<th>SEE</th>
-<th>Total</th>
-<th>Grade Point</th>
-<th>Grade</th>
-<th>Credits</th>
+    <th>S.No</th>
+    <th>Course Code</th>
+    <th class="left">Course Name</th>
+    <th>CIE</th>
+    <th>SEE</th>
+    <th>Total</th>
+    <th>Grade Point</th>
+    <th>Grade</th>
+    <th>Credits Reg.</th>
+    <th>Credits Earn.</th>
 </tr>
 
 {% for sub in student.subjects %}
 <tr>
-<td>{{ loop.index }}</td>
-<td>{{ sub.code }}</td>
-<td>{{ sub.name }}</td>
-<td>{{ sub.cie }}</td>
-<td>{{ sub.see }}</td>
-<td>{{ sub.total }}</td>
-<td>{{ sub.gp }}</td>
-<td>{{ sub.grade }}</td>
-<td>{{ sub.credits }}</td>
+    <td>{{ loop.index }}</td>
+    <td>{{ sub.code }}</td>
+    <td class="left">{{ sub.name }}</td>
+    <td>{{ sub.cie }}</td>
+    <td>{{ sub.see }}</td>
+    <td>{{ sub.total }}</td>
+    <td>{{ sub.gp }}</td>
+    <td>{{ sub.grade }}</td>
+    <td>{{ sub.cred_reg }}</td>
+    <td>{{ sub.cred_ear }}</td>
 </tr>
 {% endfor %}
+
+<!-- TOTAL -->
+<tr>
+    <td colspan="8"></td>
+    <td><b>Total</b></td>
+    <td><b>20</b></td>
+</tr>
+
+<tr>
+    <td colspan="8"></td>
+    <td><b>SGPA</b></td>
+    <td><b>{{ student.sgpa }}</b></td>
+</tr>
+
 </table>
 
-<!-- SGPA -->
-<br><br>
-<table style="width:300px; float:right;">
-<tr>
-<td><b>Total Credits</b></td>
-<td>{{ student.subjects | sum(attribute='credits') }}</td>
-</tr>
-<tr>
-<td><b>SGPA</b></td>
-<td>{{ student.sgpa }}</td>
-</tr>
-</table>
-
-<br><br><br>
-
-<!-- FOOTER -->
-<div style="display:flex; justify-content:space-between;">
-<div><b>Date:</b> Apr 07, 2026</div>
-<div><b>Controller of Examinations</b></div>
+<!-- DATE + SIGN -->
+<div class="bottom">
+    <div><b>Date:</b> Apr 04, 2026</div>
+    <div><b>Controller of Examinations</b></div>
 </div>
 
-<br><br>
-
-<p style="font-size:12px;">
-Note: The results published are provisional and for immediate information only.
+<!-- NOTE -->
+<p class="note">
+<b>Note:</b> The results published on this web site are provisional and are provided for immediate information to the examinees.
+These results may not be used as official confirmation of your achievement. While all efforts have been made to make the
+information available on this web site as authentic as possible, Maharaja Institute of Technology Mysore, contineo,
+e-Sutra chronicles Pvt. Ltd or any of their staff will not be responsible for any loss caused by shortcoming, defect or
+inaccuracy in the information provided on this website. Please contact the Examination Department for the final official results.
 </p>
 
 </body>
