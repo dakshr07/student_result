@@ -6,9 +6,9 @@ students = {
 
     "4MH24CI022": {
         "password": "MIT123",
-        "name": "Likitha",
+        "name": "LIKITHA",
         "branch": "COMPUTER SCIENCE AND ENGINEERING(AI & ML)",
-        "father": "Uday T S",
+        "father": "UDAYA T.S",
         "sgpa": "7.15",
         "subjects": [
             {"code":"M23BBIOK301","name":"BIOLOGY FOR ENGINEERS","cie":47,"see":41,"total":88,"gp":9,"grade":"A+","credits_reg":1,"credits_earned":1},
@@ -26,9 +26,9 @@ students = {
 
     "4MH24EC039": {
         "password": "MIT123",
-        "name": "Harshitha C S",
+        "name": "HARSHITHA C.S",
         "branch": "ELECTRONICS AND COMMUNICATION ENGINEERING",
-        "father": "Ramesh C S",
+        "father": "SATHISH",
         "sgpa": "7.32",
         "subjects": [
             {"code":"M23BBIOK301","name":"NETWORK ANALYSIS","cie":30,"see":28,"total":58,"gp":8,"grade":"B","credits_reg":1,"credits_earned":1},
@@ -46,9 +46,9 @@ students = {
 
     "4MH24CS075": {
         "password": "MIT123",
-        "name": "Kushi KAVERAMMA L",
+        "name": "KUSHI KAVERAMMA K.L",
         "branch": "COMPUTER SCIENCE AND ENGINEERING",
-        "father": "Lokesh K",
+        "father": "LAKSHMEESHA",
         "sgpa": "7.09",
         "subjects": [
             
@@ -67,9 +67,9 @@ students = {
 
     "4MH24CA056": {
         "password": "MIT123",
-        "name": "Tejaswini B K",
+        "name": "TEJASWINI B K",
         "branch": "COMPUTER SCIENCE AND ENGINEERING (AI)",
-        "father": "Krishnappa B L",
+        "father": "KRISHNAPPA B L",
         "sgpa": "7.65",
         "subjects": [
             {"code":"M23BBIOK301","name":"BIOLOGY FOR ENGINEERS","cie":50,"see":47,"total":97,"gp":9,"grade":"A+","credits_reg":1,"credits_earned":1},
