@@ -10,13 +10,13 @@ body {
 }
 
 .header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .logo {
-    position: absolute;
-    left: 20px;
-    top: 20px;
     width: 80px;
 }
 
@@ -58,16 +58,21 @@ th, td {
 <body>
 
 <!-- LOGO -->
-<img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+
 <!-- HEADER -->
 <div class="header">
-    <h2>Maharaja Institute Of Technology Mysore</h2>
-    <hr class="title-line">
-    <p>An Autonomous Institution Affiliated to VTU</p>
-    <h3>Provisional Grade Card</h3>
-    <p>Odd semester 2025-26 Dec/Jan Examination</p>
-</div>
+    
+    <img src="{{ url_for('static', filename='logo.png') }}" style="width:80px; margin-right:20px;">
 
+    <div>
+        <h2>Maharaja Institute Of Technology Mysore</h2>
+        <hr class="title-line">
+        <p>An Autonomous Institution Affiliated to VTU</p>
+        <h3>Provisional Grade Card</h3>
+        <p>Odd semester 2025-26 Dec/Jan Examination</p>
+    </div>
+
+</div>
 <!-- DETAILS -->
 <div class="details">
     <div>
